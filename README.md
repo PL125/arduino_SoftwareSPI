@@ -40,9 +40,9 @@ SBI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 	beginTransaction(<SCK pin>, <MISO pin>, <MOSI pin>, <data mode>, <data order>);
 	// replaces begin() and beginTransaction() above
 		
-	endTransaction(void);	// restes the SCK and MOSI pins to INPUTs
+	endTransaction(void);	// resets the SCK and MOSI pins to INPUTs
 		
-	transfer(<data>);	// send an 8 bit unsigned Byte out on MOSI
+	uint8_t transfer(<data>);	// send & receive an 8 bit unsigned Byte out on MOSI. in on MISO
 		
 	uint8_t inData = transfer(<data>);	// reads the MISO data whilst sending on MOSI
 		
