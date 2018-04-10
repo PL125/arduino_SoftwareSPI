@@ -46,34 +46,7 @@ SBI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 		
 	uint8_t inData = transfer(<data>);	// reads the MISO data whilst sending on MOSI
 		
-	makeRegMask(<Arduino pin>, <register>, <bit>, <INPUT/OUTPUT>);
-	// creates a PORT and BIT mask for direct PORT manipulation
-
-	//Blink example for UNO, NANO etc. with LED and Serial output:
-		
-  #include <SBI.h>
-		
-	volatile uint8_t *portReg, portBit, *pinReg, pinBit;
-	uint32_t startMicros, endMicros;
-		
-	void setup() {
-		Serial.begin(57600);
-		SBI.makeRegMask(LED_BUILTIN, &portReg, &portBit, OUTPUT);	// *portReg = PORTB, portBit = PB5 bitmask
-		SBI.makeRegMask(LED_BUILTIN, &pinReg, &pinBit, INPUT);		// *pinReg = PINB, pinBit = PB5 bitmask
-		pinMode(LED_BUILTIN, OUTPUT);
-	}
-		
-	void loop() {
-		startMicros = micros();
-		*portReg |= portBit;	// LED ON
-		endMicros = micros();
-		Serial.print(*pinReg & pinBit? "HIGH":"LOW");	// read the state of the LED pin and print it
-		delay(1000);
-		*portReg &= ~portBit;	// LED OFF
-		Serial.println(*pinReg & pinBit? "HIGH":"LOW");	// read the state of the LED pin and print it
-		delay(1000);
-	}
-		
-The advantage of using direct port manipulation is speed, not memory saving 
+	makeRegMask(<Arduino pin>, &<register>, &<bit>, <INPUT/OUTPUT/MODEREG>);
+	// creates a PIN/PORT/MODE register pointer and BIT mask for direct PORT manipulation
 
 (C) Copyright 2018 Rev Phil Morris
