@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map for SBI
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SBIClass	KEYWORD1
+SBI	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+beginTransaction	KEYWORD2
+endTransaction	KEYWORD2
+transfer	KEYWORD2
+makeRegMask	KEYWORD2
+
+######################################
+# Constants (LITERAL1)
+#######################################
+SBI_MODE0	LITERAL1
+SBI_MODE1	LITERAL1
+SBI_MODE2	LITERAL1
+SBI_MODE3	LITERAL1
+MODEREG	LITERAL1
