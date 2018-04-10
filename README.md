@@ -15,16 +15,16 @@ SBI uses the same pin names as SPI e.g. SCK, MISO and MOSI so, for clarity:
 
   SBI Modes:
 
-SBI_MODE0 = SCK L-H-L, Clock on Leading Edge L > H
-SBI_MODE1 = SCK L-H-L, Clock on Trailing Edge H > L
-SBI_MODE2 = SCK H-L-H, Clock on Leading Edge H > L
+SBI_MODE0 = SCK L-H-L, Clock on Leading Edge L > H  
+SBI_MODE1 = SCK L-H-L, Clock on Trailing Edge H > L  
+SBI_MODE2 = SCK H-L-H, Clock on Leading Edge H > L  
 SBI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 
   SBI Bit Order:
 
-  LSBFIRST  bits 76543210 ->
-  MSBFIRST  bits <- 76543210
-		
+  LSBFIRST  bits 76543210 ->  
+  MSBFIRST  bits <- 76543210  
+  
   Methods:
 		
 	begin(<SCK pin>, <MISO pin>, <MOSI pin>);	// sets up the desired pins for INPUT/OUTPUT, SBI_MODE0 and MSBFIRST
