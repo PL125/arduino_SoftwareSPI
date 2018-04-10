@@ -15,10 +15,10 @@ SBI uses the same pin names as SPI e.g. SCK, MISO and MOSI so, for clarity:
 
   SBI Modes:
 
-  SBI_MODE0 = SCK L-H-L, Clock on Leading Edge L > H
-  SBI_MODE1 = SCK L-H-L, Clock on Trailing Edge H > L
-  SBI_MODE2 = SCK H-L-H, Clock on Leading Edge H > L
-  SBI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
+SBI_MODE0 = SCK L-H-L, Clock on Leading Edge L > H
+SBI_MODE1 = SCK L-H-L, Clock on Trailing Edge H > L
+SBI_MODE2 = SCK H-L-H, Clock on Leading Edge H > L
+SBI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 
   SBI Bit Order:
 
