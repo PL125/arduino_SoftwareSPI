@@ -58,7 +58,7 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 	
 	example:  
 	
-	#include <SoftwareSPI>
+	#include <SoftwareSPI.h>
 	
 	uint8_t *ledReg, ledBit; // a pointer and bitmask for LED_BUILTIN
 	
