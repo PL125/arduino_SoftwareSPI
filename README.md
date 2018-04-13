@@ -3,9 +3,9 @@ An alternative to SPI using Serial Bitbang
 
 SoftwareSPI was primarily intended to work with shift registers and similar devices but it ended up working so like SPI that I decided to make its control, and use, SPI compatible (almost).
 		
-SoftwareSPI was originally written for the MAX7219 display device which uses a 16bit shift register	but it also worked well with the SSD1306 SPI display device so I thought I'd add the ability to	also read Serial data in. SPI should always be the first choice but if, like me, you want to be able to use alternatives to the fixed SPI pins, SoftwareSPI does the job.
+SoftwareSPI was originally written for the MAX7219 display device which uses a 16bit shift register but it also worked well with the SSD1306 SPI display device so I thought I'd add the ability to also read Serial data in. SPI should always be the first choice but if, like me, you want to be able to use alternatives to the fixed SPI pins, SoftwareSPI does the job.
 
-SPI transfers are about 5 - 6 times faster than the equivalent SBI transfer but, the advantage of SoftwareSPI is that you can use just about any digital pins (including dual digital/analog pins) in whatever order you wish.
+SPI transfers are about 5 - 6 times faster than the equivalent SoftwareSPI transfer but, the advantage of SoftwareSPI is that you can use just about any digital pins (including dual digital/analog pins) in whatever order you wish.
 
 SoftwareSPI uses the same pin names as SPI e.g. SCK, MISO and MOSI so, for clarity:
 
