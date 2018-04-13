@@ -34,6 +34,8 @@
 */
 #define SSPI_MODE true  // true = SSPI, false = SPI
 
+#include "Streaming.h"  // https://github.com/geneReeves/ArduinoStreaming
+
 #if SSPI_MODE
 #include <SoftwareSPI.h>
 // this SSPI demo uses the UNO SPI pins for convenience
@@ -49,7 +51,6 @@
 #define SELECT digitalWrite(CS_PIN,LOW);
 #define DESELECT digitalWrite(CS_PIN,HIGH);
 #endif
-#include "Streaming.h"
 
 uint8_t csBit, *csReg;  // Chip Select bit and register
 
@@ -59,10 +60,6 @@ void setup()
 
 #if SSPI_MODE
   Serial << "SoftwareSPI Interface selected!" << endl;
-#else
-  Serial << "Serial Peripheral Interface selected!" << endl;
-#endif
-#if SSPI_MODE
   uint8_t success = SSPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN);  // default SSPI_MODE0, MSBFIRST
   // or uint8_t success = SSPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, SSPI_MODE0, MSBFIRST);
   if (success) {
@@ -84,6 +81,7 @@ void setup()
   }
   SSPI.makeRegMask(CS_PIN, &csReg, &csBit, OUTPUT);
 #else
+  Serial << "Serial Peripheral Interface selected!" << endl;
   SPI.begin();
   SPI.beginTransaction(SPISettings(F_CPU, SPI_MODE0, MSBFIRST));
 #endif
