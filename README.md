@@ -25,8 +25,9 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
   LSBFIRST  bits 76543210 ->  
   MSBFIRST  bits <- 76543210  
   
-  Methods:
-	// sets up the desired pins for INPUT/OUTPUT, SBI_MODE0 and MSBFIRST	
+  Methods:  
+  
+  	// sets up the desired pins for INPUT/OUTPUT, SBI_MODE0 and MSBFIRST	
 	begin(<SCK pin>, <MISO pin>, <MOSI pin>);
 	
 	// to send data only:
