@@ -36,10 +36,10 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 	// to read data only:
 	begin(<SCK pin>, <MISO pin>, NOT_A_PIN);	// use SCK and MISO only
 	
-	// changes the default SBI_MODE0 and MSBFIRST	
+	// changes the default SSPI_MODE0 and MSBFIRST	
 	beginTransaction(<data mode>, <data order>);	
 	
-	example: beginTransaction(SBI_MODE1, LSBFIRST);
+	example: beginTransaction(SSPI_MODE1, LSBFIRST);
 	
 	// replaces begin() and beginTransaction() above	
 	beginTransaction(<SCK pin>, <MISO pin>, <MOSI pin>, <data mode>, <data order>);
