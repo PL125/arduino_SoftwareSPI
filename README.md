@@ -56,5 +56,22 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 	// creates a PIN/PORT/MODE register pointer and BIT mask for direct PORT manipulation	
 	makeRegMask(<Arduino pin>, &<register>, &<bit>, <INPUT/OUTPUT/MODEREG>);
 	
+	example:  
+	
+	uint8_t *ledReg, ledBit; // a pointer and bitmask for LED_BUILTIN
+	
+	void setup() {
+	makeRegMask(LED_BUILTIN, &ledReg, &ledBit, OUTPUT); // set the pointer and bitmask
+	pinMode(LED_BUILTIN, OUTPUT); // make LED_BUILTIN and output
+	}
+	
+	void loop() {
+	*ledReg |= ledBit;
+	delay(1000);
+	*ledReg &= ~ledBit;
+	delay(1000);
+	}
+	
+	
 
 (C) Copyright 2018 Rev Phil Morris
