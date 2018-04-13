@@ -64,7 +64,7 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 	
 	void setup() {
 	SSPI.makeRegMask(LED_BUILTIN, &ledReg, &ledBit, OUTPUT); // set the pointer and bitmask
-	pinMode(LED_BUILTIN, OUTPUT); // make LED_BUILTIN and output
+	pinMode(LED_BUILTIN, OUTPUT); // make LED_BUILTIN an OUTPUT
 	}
 	
 	void loop() {
