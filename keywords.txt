@@ -1,13 +1,13 @@
 #######################################
-# Syntax Coloring Map for SBI
+# Syntax Coloring Map for SoftwareSPI
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-SBIClass	KEYWORD1
-SBI	KEYWORD1
+SSPIClass	KEYWORD1
+SSPI	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -21,8 +21,8 @@ makeRegMask	KEYWORD2
 ######################################
 # Constants (LITERAL1)
 #######################################
-SBI_MODE0	LITERAL1
-SBI_MODE1	LITERAL1
-SBI_MODE2	LITERAL1
-SBI_MODE3	LITERAL1
+SSPI_MODE0	LITERAL1
+SSPI_MODE1	LITERAL1
+SSPI_MODE2	LITERAL1
+SSPI_MODE3	LITERAL1
 MODEREG	LITERAL1
