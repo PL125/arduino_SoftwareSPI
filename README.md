@@ -26,27 +26,34 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
   MSBFIRST  bits <- 76543210  
   
   Methods:
-		
-	begin(<SCK pin>, <MISO pin>, <MOSI pin>);	// sets up the desired pins for INPUT/OUTPUT, SBI_MODE0 and MSBFIRST
+	// sets up the desired pins for INPUT/OUTPUT, SBI_MODE0 and MSBFIRST	
+	begin(<SCK pin>, <MISO pin>, <MOSI pin>);
+	
 	// to send data only:
 	begin(<SCK pin>, NOT_A_PIN, <MOSI pin>);	// use SCK and MOSI only
+	
 	// to read data only:
 	begin(<SCK pin>, <MISO pin>, NOT_A_PIN);	// use SCK and MISO only
-		
-	beginTransaction(<data mode>, <data order>);	// changes the default SBI_MODE0 and MSBFIRST
-	// example
-	beginTransaction(SBI_MODE1, LSBFIRST);
-		
+	
+	// changes the default SBI_MODE0 and MSBFIRST	
+	beginTransaction(<data mode>, <data order>);	
+	
+	example: beginTransaction(SBI_MODE1, LSBFIRST);
+	
+	// replaces begin() and beginTransaction() above	
 	beginTransaction(<SCK pin>, <MISO pin>, <MOSI pin>, <data mode>, <data order>);
-	// replaces begin() and beginTransaction() above
-		
-	endTransaction(void);	// resets the SCK and MOSI pins to INPUTs
-		
-	transfer(<data>);	// send and/or receive an 8 bit unsigned Byte out on MOSI. in on MISO
-		
-	uint8_t inData = transfer(<data>);	// reads the MISO data whilst sending on MOSI
-		
+	
+	// resets the SCK and MOSI pins to INPUTs	
+	endTransaction(void);	
+	
+	// send and/or receive an 8 bit unsigned Byte out on MOSI. in on MISO	
+	transfer(<data>);	
+	
+	// reads the MISO data whilst sending on MOSI	
+	uint8_t inData = transfer(<data>);
+	
+	// creates a PIN/PORT/MODE register pointer and BIT mask for direct PORT manipulation	
 	makeRegMask(<Arduino pin>, &<register>, &<bit>, <INPUT/OUTPUT/MODEREG>);
-	// creates a PIN/PORT/MODE register pointer and BIT mask for direct PORT manipulation
+	
 
 (C) Copyright 2018 Rev Phil Morris
