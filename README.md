@@ -9,9 +9,9 @@ SPI transfers are about 5 - 6 times faster than the equivalent SBI transfer but,
 
 SoftwareSPI uses the same pin names as SPI e.g. SCK, MISO and MOSI so, for clarity:
 
-   SCK = CLOCK OUT
-  MISO = DATA IN
-  MOSI = DATA OUT
+   SCK = CLOCK OUT  
+   MISO = DATA IN  
+   MOSI = DATA OUT
 
   SSPI Modes:
 
