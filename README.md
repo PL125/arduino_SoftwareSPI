@@ -5,7 +5,7 @@ SoftwareSPI was primarily intended to work with shift registers and similar devi
 		
 SoftwareSPI was originally written for the MAX7219 display device which uses a 16bit shift register	but it also worked well with the SSD1306 SPI display device so I thought I'd add the ability to	also read Serial data in. SPI should always be the first choice but if, like me, you want to be able to use alternatives to the fixed SPI pins, SoftwareSPI does the job.
 
-SPI transfers are about 5 - 6 times faster than the equivalent SBI transfer but, the advantage of SoftwareSPI is that you can use just about any digital pins in whatever order you wish.
+SPI transfers are about 5 - 6 times faster than the equivalent SBI transfer but, the advantage of SoftwareSPI is that you can use just about any digital pins (including dual digital/analog pins) in whatever order you wish.
 
 SoftwareSPI uses the same pin names as SPI e.g. SCK, MISO and MOSI so, for clarity:
 
@@ -15,7 +15,7 @@ SoftwareSPI uses the same pin names as SPI e.g. SCK, MISO and MOSI so, for clari
 
   SSPI Modes:
 
-SSPI_MODE0 = SCK L-H-L, Clock on Leading Edge L > H  
+SSPI_MODE0 = SCK L-H-L, Clock on Leading Edge L > H // default  
 SSPI_MODE1 = SCK L-H-L, Clock on Trailing Edge H > L  
 SSPI_MODE2 = SCK H-L-H, Clock on Leading Edge H > L  
 SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
