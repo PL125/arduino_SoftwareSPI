@@ -23,7 +23,7 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
   SSPI Bit Order:
 
   LSBFIRST  bits 76543210 ->  
-  MSBFIRST  bits <- 76543210  
+  MSBFIRST  bits <- 76543210 // default  
   
   Methods:  
   
