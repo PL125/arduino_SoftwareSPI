@@ -58,17 +58,19 @@ SSPI_MODE3 = SCK H-L-H, Clock on Trailing Edge L > H
 	
 	example:  
 	
+	#include <SoftwareSPI>
+	
 	uint8_t *ledReg, ledBit; // a pointer and bitmask for LED_BUILTIN
 	
 	void setup() {
-	makeRegMask(LED_BUILTIN, &ledReg, &ledBit, OUTPUT); // set the pointer and bitmask
+	SSPI.makeRegMask(LED_BUILTIN, &ledReg, &ledBit, OUTPUT); // set the pointer and bitmask
 	pinMode(LED_BUILTIN, OUTPUT); // make LED_BUILTIN and output
 	}
 	
 	void loop() {
-	*ledReg |= ledBit;
+	*ledReg |= ledBit; // turn LED_BUILTIN ON
 	delay(1000);
-	*ledReg &= ~ledBit;
+	*ledReg &= ~ledBit; // turn LED_BUILTIN OFF
 	delay(1000);
 	}
 	
